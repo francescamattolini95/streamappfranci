@@ -6,7 +6,7 @@ from spacy.pipeline import EntityRuler
 from spacy.matcher import PhraseMatcher
 import base64
 
-SPACY_MODEL_NAMES = ["en_core_web_sm"]
+SPACY_MODEL_NAMES = ["jobtitles"]
 #SPACY_MODEL_NAMES = ["ergonomy_spacy_model"]
 DEFAULT_TEXT = "I'm a management engineer!"
 HTML_WRAPPER = """<div style="overflow-x: auto; border: 1px solid #e6e9ef; border-radius: 0.25rem; padding: 1rem; 
@@ -37,10 +37,11 @@ It uses spaCy's built-in [displaCy](http://spacy.io/usage/visualizers) visualize
 st.sidebar.title("")
 
 # Spacy
-spacy_model = "en_core_web_sm"
+spacy_model = "jobtitles"
 model_load_state = st.info(f"Loading model '{spacy_model}'...")
 nlp = load_model(spacy_model)
 model_load_state.empty()
+#nlp.to_disk("./jobtitles")
 
 # Page Title
 st.title("Try the visualizer")
